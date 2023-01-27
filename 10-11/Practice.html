@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The match() Method</h2>
+
+<p>match() searches for a match against a regular expression.</p>
+
+<p>Do a global, case-insensitive, search for "ain":</p>
+
+<p id="demo"></p>
+<input type="text" name="" id="testmail" onchange="testmail()">
+<script>
+    function testmail(){
+let text = document.getElementById("testmail").value
+let result = text.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g);
+
+document.getElementById("demo").innerHTML = result;}
+</script>
+
+</body>
+</html>
