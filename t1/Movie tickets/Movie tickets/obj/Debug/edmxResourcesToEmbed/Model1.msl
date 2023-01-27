@@ -41,6 +41,8 @@
     <EntitySetMapping Name="AspNetUsers">
       <EntityTypeMapping TypeName="VisionCinemaModel.AspNetUser">
         <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="user_image" ColumnName="user_image" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
@@ -59,6 +61,7 @@
     <EntitySetMapping Name="Feedbacks">
       <EntityTypeMapping TypeName="VisionCinemaModel.Feedback">
         <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="img" ColumnName="img" />
           <ScalarProperty Name="FeedBack_id" ColumnName="FeedBack_id" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="approve" ColumnName="approve" />
@@ -69,7 +72,7 @@
     <EntitySetMapping Name="Movies">
       <EntityTypeMapping TypeName="VisionCinemaModel.Movy">
         <MappingFragment StoreEntitySet="Movies">
-          <ScalarProperty Name="icon_Image" ColumnName="icon_Image" />
+          <ScalarProperty Name="Trailer" ColumnName="Trailer" />
           <ScalarProperty Name="Movie_Image" ColumnName="Movie_Image" />
           <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -105,7 +108,6 @@
       <EntityTypeMapping TypeName="VisionCinemaModel.Ticket">
         <MappingFragment StoreEntitySet="Tickets">
           <ScalarProperty Name="Ticket_id" ColumnName="Ticket_id" />
-          <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="Ticket_Date" ColumnName="Ticket_Date" />
           <ScalarProperty Name="Show_id" ColumnName="Show_id" />

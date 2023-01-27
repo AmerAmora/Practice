@@ -37,13 +37,16 @@
        <asp:TextBox ID="TextSearch" runat="server" placeholder="Search by Name" CssClass="textbox"></asp:TextBox><asp:Button ID="ButtonSearch" runat="server" Text="Search" CssClass="btn_search" OnClick="ButtonSearch_Click" />
     <br /> <br /><br />
 
-          <div class="container">
+          <div class="container" style="width:60%">
 
-    <asp:GridView ID="Users" runat="server" AutoGenerateColumns="False" Width="100%">
+    <asp:GridView ID="Users" runat="server"  AutoGenerateColumns="False" Width="100%" >
         <Columns>
-            <asp:BoundField DataField="SecurityStamp" HeaderText="Name" />
+            <asp:BoundField DataField="First_name" HeaderText="Name" />
             <asp:BoundField DataField="Email" HeaderText="Email" />
             <asp:BoundField DataField="PhoneNumber" HeaderText="Phone" />
+            <asp:ImageField DataImageUrlField="user_image" HeaderText="photo" ControlStyle-Width="100" ControlStyle-Height="100">
+<ControlStyle Height="130px" Width="130px"></ControlStyle>                </asp:ImageField>
+
         </Columns>
          <FooterStyle BackColor="White" ForeColor="#000066" />
               <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

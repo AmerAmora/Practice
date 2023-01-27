@@ -60,6 +60,8 @@
     <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedback__userId__534D60F1" FromRole="AspNetUsers" ToRole="Feedback" />
     <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__userId__4CA06362" FromRole="AspNetUsers" ToRole="Tickets" />
     <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+    <Property Name="user_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="First_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Feedback">
     <Key>
@@ -70,6 +72,7 @@
     <Property Name="approve" Type="Boolean" />
     <Property Name="userId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AspNetUser" Relationship="Self.FK__Feedback__userId__534D60F1" FromRole="Feedback" ToRole="AspNetUsers" />
+    <Property Name="img" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Movy">
     <Key>
@@ -83,7 +86,7 @@
     <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Shows" Relationship="Self.FK__Shows__Movie_id__48CFD27E" FromRole="Movies" ToRole="Shows" />
     <Property Name="Movie_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="icon_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Trailer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Show_Seats">
     <Key>
@@ -114,7 +117,6 @@
       <PropertyRef Name="Ticket_id" />
     </Key>
     <Property Name="Ticket_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NumberOfSeats" Type="Int32" />
     <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Ticket_Date" Type="DateTime" Precision="3" />
     <Property Name="Show_id" Type="Int32" />

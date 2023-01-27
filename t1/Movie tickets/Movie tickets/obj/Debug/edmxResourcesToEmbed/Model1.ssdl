@@ -60,6 +60,8 @@
     <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="user_image" Type="varchar(max)" />
+    <Property Name="First_name" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="Feedback">
     <Key>
@@ -69,6 +71,7 @@
     <Property Name="Comment" Type="varchar(max)" />
     <Property Name="approve" Type="bit" />
     <Property Name="userId" Type="nvarchar" MaxLength="128" />
+    <Property Name="img" Type="varchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="Movies">
     <Key>
@@ -80,8 +83,8 @@
     <Property Name="Duration" Type="varchar" MaxLength="20" />
     <Property Name="Release_Date" Type="datetime" />
     <Property Name="genre" Type="varchar" MaxLength="50" />
+    <Property Name="Trailer" Type="varchar(max)" />
     <Property Name="Movie_Image" Type="varchar(max)" />
-    <Property Name="icon_Image" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Show_Seats">
     <Key>
@@ -118,13 +121,12 @@
       <PropertyRef Name="Ticket_id" />
     </Key>
     <Property Name="Ticket_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NumberOfSeats" Type="int" />
     <Property Name="price" Type="numeric" Precision="18" Scale="0" />
     <Property Name="Ticket_Date" Type="datetime" />
     <Property Name="Show_id" Type="int" />
     <Property Name="userId" Type="nvarchar" MaxLength="128" />
   </EntityType>
-  <Association Name="FK__Feedback__userId__534D60F1">
+  <Association Name="FK__Feedback__userId__5070F446">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
     <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
     <ReferentialConstraint>
@@ -148,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Show_Seat__Ticke__5070F446">
+  <Association Name="FK__Show_Seat__Ticke__52593CB8">
     <End Role="Tickets" Type="Self.Tickets" Multiplicity="0..1" />
     <End Role="Show_Seats" Type="Self.Show_Seats" Multiplicity="*" />
     <ReferentialConstraint>
@@ -184,7 +186,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Tickets__userId__4CA06362">
+  <Association Name="FK__Tickets__userId__5535A963">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
     <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
@@ -265,7 +267,7 @@
     <EntitySet Name="Shows" EntityType="Self.Shows" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="suggestion1" EntityType="Self.suggestion1" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Feedback__userId__534D60F1" Association="Self.FK__Feedback__userId__534D60F1">
+    <AssociationSet Name="FK__Feedback__userId__5070F446" Association="Self.FK__Feedback__userId__5070F446">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Feedback" EntitySet="Feedback" />
     </AssociationSet>
@@ -273,7 +275,7 @@
       <End Role="Shows" EntitySet="Shows" />
       <End Role="Show_Seats" EntitySet="Show_Seats" />
     </AssociationSet>
-    <AssociationSet Name="FK__Show_Seat__Ticke__5070F446" Association="Self.FK__Show_Seat__Ticke__5070F446">
+    <AssociationSet Name="FK__Show_Seat__Ticke__52593CB8" Association="Self.FK__Show_Seat__Ticke__52593CB8">
       <End Role="Tickets" EntitySet="Tickets" />
       <End Role="Show_Seats" EntitySet="Show_Seats" />
     </AssociationSet>
@@ -285,7 +287,7 @@
       <End Role="Shows" EntitySet="Shows" />
       <End Role="Tickets" EntitySet="Tickets" />
     </AssociationSet>
-    <AssociationSet Name="FK__Tickets__userId__4CA06362" Association="Self.FK__Tickets__userId__4CA06362">
+    <AssociationSet Name="FK__Tickets__userId__5535A963" Association="Self.FK__Tickets__userId__5535A963">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Tickets" EntitySet="Tickets" />
     </AssociationSet>
